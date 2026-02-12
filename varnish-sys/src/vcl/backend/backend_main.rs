@@ -459,6 +459,8 @@ impl<'a> NativeBackendBuilder<'a> {
             ipv6: VCL_IP(null()),
             uds_path: null(),
             preamble: null(),
+            hosthdr: null(),
+            sslflags: 0,
         });
 
         // Set endpoint based on type

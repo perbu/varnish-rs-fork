@@ -136,12 +136,6 @@ where
         }
     }
 }
-#[derive(PartialEq, Copy, Clone, Hash, Debug, Default)]
-#[repr(C)]
-pub struct __BindgenComplex<T> {
-    pub re: T,
-    pub im: T,
-}
 #[repr(C)]
 #[derive(Default)]
 pub struct __IncompleteArrayField<T>(::std::marker::PhantomData<T>, [T; 0]);
@@ -175,8 +169,7 @@ impl<T> ::std::fmt::Debug for __IncompleteArrayField<T> {
 pub const _SYS_SOCKET_H: u32 = 1;
 pub const _FEATURES_H: u32 = 1;
 pub const _DEFAULT_SOURCE: u32 = 1;
-pub const __GLIBC_USE_ISOC2Y: u32 = 0;
-pub const __GLIBC_USE_ISOC23: u32 = 0;
+pub const __GLIBC_USE_ISOC2X: u32 = 0;
 pub const __USE_ISOC11: u32 = 1;
 pub const __USE_ISOC99: u32 = 1;
 pub const __USE_ISOC95: u32 = 1;
@@ -194,13 +187,12 @@ pub const __WORDSIZE: u32 = 64;
 pub const __WORDSIZE_TIME64_COMPAT32: u32 = 1;
 pub const __SYSCALL_WORDSIZE: u32 = 64;
 pub const __TIMESIZE: u32 = 64;
-pub const __USE_TIME_BITS64: u32 = 1;
 pub const __USE_MISC: u32 = 1;
 pub const __USE_ATFILE: u32 = 1;
 pub const __USE_FORTIFY_LEVEL: u32 = 0;
 pub const __GLIBC_USE_DEPRECATED_GETS: u32 = 0;
 pub const __GLIBC_USE_DEPRECATED_SCANF: u32 = 0;
-pub const __GLIBC_USE_C23_STRTOL: u32 = 0;
+pub const __GLIBC_USE_C2X_STRTOL: u32 = 0;
 pub const _STDC_PREDEF_H: u32 = 1;
 pub const __STDC_IEC_559__: u32 = 1;
 pub const __STDC_IEC_60559_BFP__: u32 = 201404;
@@ -209,7 +201,7 @@ pub const __STDC_IEC_60559_COMPLEX__: u32 = 201404;
 pub const __STDC_ISO_10646__: u32 = 201706;
 pub const __GNU_LIBRARY__: u32 = 6;
 pub const __GLIBC__: u32 = 2;
-pub const __GLIBC_MINOR__: u32 = 42;
+pub const __GLIBC_MINOR__: u32 = 39;
 pub const _SYS_CDEFS_H: u32 = 1;
 pub const __glibc_c99_flexarr_available: u32 = 1;
 pub const __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI: u32 = 0;
@@ -392,12 +384,10 @@ pub const SOL_XDP: u32 = 283;
 pub const SOL_MPTCP: u32 = 284;
 pub const SOL_MCTP: u32 = 285;
 pub const SOL_SMC: u32 = 286;
-pub const SOL_VSOCK: u32 = 287;
 pub const SOMAXCONN: u32 = 4096;
 pub const _BITS_SOCKADDR_H: u32 = 1;
 pub const _SS_SIZE: u32 = 128;
 pub const __BITS_PER_LONG: u32 = 64;
-pub const __BITS_PER_LONG_LONG: u32 = 64;
 pub const FIOSETOWN: u32 = 35073;
 pub const SIOCSPGRP: u32 = 35074;
 pub const FIOGETOWN: u32 = 35075;
@@ -487,16 +477,6 @@ pub const SO_TXREHASH: u32 = 74;
 pub const SO_RCVMARK: u32 = 75;
 pub const SO_PASSPIDFD: u32 = 76;
 pub const SO_PEERPIDFD: u32 = 77;
-pub const SO_DEVMEM_LINEAR: u32 = 78;
-pub const SCM_DEVMEM_LINEAR: u32 = 78;
-pub const SO_DEVMEM_DMABUF: u32 = 79;
-pub const SCM_DEVMEM_DMABUF: u32 = 79;
-pub const SO_DEVMEM_DONTNEED: u32 = 80;
-pub const SCM_TS_OPT_ID: u32 = 81;
-pub const SO_RCVPRIORITY: u32 = 82;
-pub const SO_PASSRIGHTS: u32 = 83;
-pub const SO_INQ: u32 = 84;
-pub const SCM_INQ: u32 = 84;
 pub const SO_TIMESTAMP: u32 = 29;
 pub const SO_TIMESTAMPNS: u32 = 35;
 pub const SO_TIMESTAMPING: u32 = 37;
@@ -509,18 +489,18 @@ pub const __osockaddr_defined: u32 = 1;
 pub const _STRING_H: u32 = 1;
 pub const __GLIBC_USE_LIB_EXT2: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_BFP_EXT: u32 = 0;
-pub const __GLIBC_USE_IEC_60559_BFP_EXT_C23: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_BFP_EXT_C2X: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_EXT: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_FUNCS_EXT: u32 = 0;
-pub const __GLIBC_USE_IEC_60559_FUNCS_EXT_C23: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_TYPES_EXT: u32 = 0;
 pub const _BITS_TYPES_LOCALE_T_H: u32 = 1;
 pub const _BITS_TYPES___LOCALE_T_H: u32 = 1;
 pub const _STRINGS_H: u32 = 1;
 pub const _MATH_H: u32 = 1;
 pub const _BITS_LIBM_SIMD_DECL_STUBS_H: u32 = 1;
-pub const __HAVE_FLOAT128: u32 = 1;
-pub const __HAVE_DISTINCT_FLOAT128: u32 = 1;
+pub const __HAVE_FLOAT128: u32 = 0;
+pub const __HAVE_DISTINCT_FLOAT128: u32 = 0;
 pub const __HAVE_FLOAT64X: u32 = 1;
 pub const __HAVE_FLOAT64X_LONG_DOUBLE: u32 = 1;
 pub const __HAVE_FLOAT16: u32 = 0;
@@ -635,11 +615,15 @@ pub const WINT_MAX: u32 = 4294967295;
 pub const VRT_INTEGER_MAX: u64 = 999999999999999;
 pub const VRT_INTEGER_MIN: i64 = -999999999999999;
 pub const VRT_MAJOR_VERSION: u32 = 22;
-pub const VRT_MINOR_VERSION: u32 = 0;
+pub const VRT_MINOR_VERSION: u32 = 1;
 pub const STRANDS_MAGIC: u32 = 1566224790;
 pub const VRT_BLOB_MAGIC: u32 = 3776240542;
 pub const VRT_NULL_BLOB_TYPE: u32 = 4208873376;
 pub const VRT_CTX_MAGIC: u32 = 1807282395;
+pub const BSSL_F_ENABLE: u32 = 1;
+pub const BSSL_F_NOSNI: u32 = 2;
+pub const BSSL_F_NOVERIFY: u32 = 4;
+pub const BSSL_F_VERIFY_HOST: u32 = 8;
 pub const VRT_ENDPOINT_MAGIC: u32 = 3426849607;
 pub const VRT_BACKEND_MAGIC: u32 = 1201262188;
 pub const VRT_BACKEND_PROBE_MAGIC: u32 = 2224653456;
@@ -842,7 +826,7 @@ pub const VFP_CTX_MAGIC: u32 = 1641665509;
 pub const VDP_ENTRY_MAGIC: u32 = 893302657;
 pub const VDP_CTX_MAGIC: u32 = 3998227959;
 pub const VMOD_ABI_Version: &::std::ffi::CStr =
-    c"Varnish 8.0.0 71d4d75665f4d1949f7eeca28092a12df7037f3a";
+    c"Varnish trunk 6f2d82ebc566baaa03229c328383324421e5f9f5";
 pub const VSB_MAGIC: u32 = 1250090378;
 pub const VSB_FIXEDLEN: u32 = 0;
 pub const VSB_AUTOEXTEND: u32 = 1;
@@ -857,6 +841,7 @@ pub const VSB_QUOTE_CSTR: u32 = 8;
 pub const VSB_QUOTE_UNSAFE: u32 = 16;
 pub const VSB_QUOTE_NONL: u32 = 1;
 pub const VSB_QUOTE_ESCHEX: u32 = 32;
+pub const VSB_QUOTE_ABBREVIATE: u32 = 64;
 pub const VSM_n_USAGE: &::std::ffi::CStr = c"[-n varnish_name]";
 pub const VSM_t_USAGE: &::std::ffi::CStr = c"[-t <seconds|off>]";
 pub const VSM_MGT_RUNNING: u32 = 2;
@@ -1255,12 +1240,11 @@ const _: () = {
 pub struct __pthread_cond_s {
     pub __wseq: __atomic_wide_counter,
     pub __g1_start: __atomic_wide_counter,
+    pub __g_refs: [::std::ffi::c_uint; 2usize],
     pub __g_size: [::std::ffi::c_uint; 2usize],
     pub __g1_orig_size: ::std::ffi::c_uint,
     pub __wrefs: ::std::ffi::c_uint,
     pub __g_signals: [::std::ffi::c_uint; 2usize],
-    pub __unused_initialized_1: ::std::ffi::c_uint,
-    pub __unused_initialized_2: ::std::ffi::c_uint,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
@@ -1270,18 +1254,16 @@ const _: () = {
         [::std::mem::offset_of!(__pthread_cond_s, __wseq) - 0usize];
     ["Offset of field: __pthread_cond_s::__g1_start"]
         [::std::mem::offset_of!(__pthread_cond_s, __g1_start) - 8usize];
+    ["Offset of field: __pthread_cond_s::__g_refs"]
+        [::std::mem::offset_of!(__pthread_cond_s, __g_refs) - 16usize];
     ["Offset of field: __pthread_cond_s::__g_size"]
-        [::std::mem::offset_of!(__pthread_cond_s, __g_size) - 16usize];
+        [::std::mem::offset_of!(__pthread_cond_s, __g_size) - 24usize];
     ["Offset of field: __pthread_cond_s::__g1_orig_size"]
-        [::std::mem::offset_of!(__pthread_cond_s, __g1_orig_size) - 24usize];
+        [::std::mem::offset_of!(__pthread_cond_s, __g1_orig_size) - 32usize];
     ["Offset of field: __pthread_cond_s::__wrefs"]
-        [::std::mem::offset_of!(__pthread_cond_s, __wrefs) - 28usize];
+        [::std::mem::offset_of!(__pthread_cond_s, __wrefs) - 36usize];
     ["Offset of field: __pthread_cond_s::__g_signals"]
-        [::std::mem::offset_of!(__pthread_cond_s, __g_signals) - 32usize];
-    ["Offset of field: __pthread_cond_s::__unused_initialized_1"]
-        [::std::mem::offset_of!(__pthread_cond_s, __unused_initialized_1) - 40usize];
-    ["Offset of field: __pthread_cond_s::__unused_initialized_2"]
-        [::std::mem::offset_of!(__pthread_cond_s, __unused_initialized_2) - 44usize];
+        [::std::mem::offset_of!(__pthread_cond_s, __g_signals) - 40usize];
 };
 impl Default for __pthread_cond_s {
     fn default() -> Self {
@@ -1605,7 +1587,6 @@ pub const MSG_NOSIGNAL: _bindgen_ty_1 = 16384;
 pub const MSG_MORE: _bindgen_ty_1 = 32768;
 pub const MSG_WAITFORONE: _bindgen_ty_1 = 65536;
 pub const MSG_BATCH: _bindgen_ty_1 = 262144;
-pub const MSG_SOCK_DEVMEM: _bindgen_ty_1 = 33554432;
 pub const MSG_ZEROCOPY: _bindgen_ty_1 = 67108864;
 pub const MSG_FASTOPEN: _bindgen_ty_1 = 536870912;
 pub const MSG_CMSG_CLOEXEC: _bindgen_ty_1 = 1073741824;
@@ -2261,18 +2242,16 @@ unsafe extern "C" {
     pub fn strlcpy(
         __dest: *mut ::std::ffi::c_char,
         __src: *const ::std::ffi::c_char,
-        __n: ::std::ffi::c_ulong,
-    ) -> ::std::ffi::c_ulong;
+        __n: usize,
+    ) -> usize;
 }
 unsafe extern "C" {
     pub fn strlcat(
         __dest: *mut ::std::ffi::c_char,
         __src: *const ::std::ffi::c_char,
-        __n: ::std::ffi::c_ulong,
-    ) -> ::std::ffi::c_ulong;
+        __n: usize,
+    ) -> usize;
 }
-pub type __cfloat128 = __BindgenComplex<u128>;
-pub type _Float128 = u128;
 pub type _Float32 = f32;
 pub type _Float64 = f64;
 pub type _Float32x = f64;
@@ -2472,10 +2451,19 @@ unsafe extern "C" {
     pub fn ceil(__x: f64) -> f64;
 }
 unsafe extern "C" {
+    pub fn __ceil(__x: f64) -> f64;
+}
+unsafe extern "C" {
     pub fn fabs(__x: f64) -> f64;
 }
 unsafe extern "C" {
+    pub fn __fabs(__x: f64) -> f64;
+}
+unsafe extern "C" {
     pub fn floor(__x: f64) -> f64;
+}
+unsafe extern "C" {
+    pub fn __floor(__x: f64) -> f64;
 }
 unsafe extern "C" {
     pub fn fmod(__x: f64, __y: f64) -> f64;
@@ -2503,6 +2491,9 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn copysign(__x: f64, __y: f64) -> f64;
+}
+unsafe extern "C" {
+    pub fn __copysign(__x: f64, __y: f64) -> f64;
 }
 unsafe extern "C" {
     pub fn nan(__tagb: *const ::std::ffi::c_char) -> f64;
@@ -2637,7 +2628,13 @@ unsafe extern "C" {
     pub fn round(__x: f64) -> f64;
 }
 unsafe extern "C" {
+    pub fn __round(__x: f64) -> f64;
+}
+unsafe extern "C" {
     pub fn trunc(__x: f64) -> f64;
+}
+unsafe extern "C" {
+    pub fn __trunc(__x: f64) -> f64;
 }
 unsafe extern "C" {
     pub fn remquo(__x: f64, __y: f64, __quo: *mut ::std::ffi::c_int) -> f64;
@@ -2679,7 +2676,13 @@ unsafe extern "C" {
     pub fn fmax(__x: f64, __y: f64) -> f64;
 }
 unsafe extern "C" {
+    pub fn __fmax(__x: f64, __y: f64) -> f64;
+}
+unsafe extern "C" {
     pub fn fmin(__x: f64, __y: f64) -> f64;
+}
+unsafe extern "C" {
+    pub fn __fmin(__x: f64, __y: f64) -> f64;
 }
 unsafe extern "C" {
     pub fn fma(__x: f64, __y: f64, __z: f64) -> f64;
@@ -2886,10 +2889,19 @@ unsafe extern "C" {
     pub fn ceilf(__x: f32) -> f32;
 }
 unsafe extern "C" {
+    pub fn __ceilf(__x: f32) -> f32;
+}
+unsafe extern "C" {
     pub fn fabsf(__x: f32) -> f32;
 }
 unsafe extern "C" {
+    pub fn __fabsf(__x: f32) -> f32;
+}
+unsafe extern "C" {
     pub fn floorf(__x: f32) -> f32;
+}
+unsafe extern "C" {
+    pub fn __floorf(__x: f32) -> f32;
 }
 unsafe extern "C" {
     pub fn fmodf(__x: f32, __y: f32) -> f32;
@@ -2917,6 +2929,9 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn copysignf(__x: f32, __y: f32) -> f32;
+}
+unsafe extern "C" {
+    pub fn __copysignf(__x: f32, __y: f32) -> f32;
 }
 unsafe extern "C" {
     pub fn nanf(__tagb: *const ::std::ffi::c_char) -> f32;
@@ -3051,7 +3066,13 @@ unsafe extern "C" {
     pub fn roundf(__x: f32) -> f32;
 }
 unsafe extern "C" {
+    pub fn __roundf(__x: f32) -> f32;
+}
+unsafe extern "C" {
     pub fn truncf(__x: f32) -> f32;
+}
+unsafe extern "C" {
+    pub fn __truncf(__x: f32) -> f32;
 }
 unsafe extern "C" {
     pub fn remquof(__x: f32, __y: f32, __quo: *mut ::std::ffi::c_int) -> f32;
@@ -3093,7 +3114,13 @@ unsafe extern "C" {
     pub fn fmaxf(__x: f32, __y: f32) -> f32;
 }
 unsafe extern "C" {
+    pub fn __fmaxf(__x: f32, __y: f32) -> f32;
+}
+unsafe extern "C" {
     pub fn fminf(__x: f32, __y: f32) -> f32;
+}
+unsafe extern "C" {
+    pub fn __fminf(__x: f32, __y: f32) -> f32;
 }
 unsafe extern "C" {
     pub fn fmaf(__x: f32, __y: f32, __z: f32) -> f32;
@@ -3300,10 +3327,19 @@ unsafe extern "C" {
     pub fn ceill(__x: u128) -> u128;
 }
 unsafe extern "C" {
+    pub fn __ceill(__x: u128) -> u128;
+}
+unsafe extern "C" {
     pub fn fabsl(__x: u128) -> u128;
 }
 unsafe extern "C" {
+    pub fn __fabsl(__x: u128) -> u128;
+}
+unsafe extern "C" {
     pub fn floorl(__x: u128) -> u128;
+}
+unsafe extern "C" {
+    pub fn __floorl(__x: u128) -> u128;
 }
 unsafe extern "C" {
     pub fn fmodl(__x: u128, __y: u128) -> u128;
@@ -3331,6 +3367,9 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn copysignl(__x: u128, __y: u128) -> u128;
+}
+unsafe extern "C" {
+    pub fn __copysignl(__x: u128, __y: u128) -> u128;
 }
 unsafe extern "C" {
     pub fn nanl(__tagb: *const ::std::ffi::c_char) -> u128;
@@ -3465,7 +3504,13 @@ unsafe extern "C" {
     pub fn roundl(__x: u128) -> u128;
 }
 unsafe extern "C" {
+    pub fn __roundl(__x: u128) -> u128;
+}
+unsafe extern "C" {
     pub fn truncl(__x: u128) -> u128;
+}
+unsafe extern "C" {
+    pub fn __truncl(__x: u128) -> u128;
 }
 unsafe extern "C" {
     pub fn remquol(__x: u128, __y: u128, __quo: *mut ::std::ffi::c_int) -> u128;
@@ -3507,7 +3552,13 @@ unsafe extern "C" {
     pub fn fmaxl(__x: u128, __y: u128) -> u128;
 }
 unsafe extern "C" {
+    pub fn __fmaxl(__x: u128, __y: u128) -> u128;
+}
+unsafe extern "C" {
     pub fn fminl(__x: u128, __y: u128) -> u128;
+}
+unsafe extern "C" {
+    pub fn __fminl(__x: u128, __y: u128) -> u128;
 }
 unsafe extern "C" {
     pub fn fmal(__x: u128, __y: u128, __z: u128) -> u128;
@@ -3520,27 +3571,6 @@ unsafe extern "C" {
 }
 unsafe extern "C" {
     pub fn __scalbl(__x: u128, __n: u128) -> u128;
-}
-unsafe extern "C" {
-    pub fn __fpclassifyf128(__value: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __signbitf128(__value: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __isinff128(__value: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __finitef128(__value: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __isnanf128(__value: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __iseqsigf128(__x: _Float128, __y: _Float128) -> ::std::ffi::c_int;
-}
-unsafe extern "C" {
-    pub fn __issignalingf128(__value: _Float128) -> ::std::ffi::c_int;
 }
 unsafe extern "C" {
     pub static mut signgam: ::std::ffi::c_int;
@@ -5033,6 +5063,9 @@ unsafe extern "C" {
     pub fn VRT_IP_string(ctx: *const vrt_ctx, arg1: VCL_IP) -> VCL_STRING;
 }
 unsafe extern "C" {
+    pub fn VRT_PROBE_string(arg1: VCL_PROBE) -> VCL_STRING;
+}
+unsafe extern "C" {
     pub fn VRT_REAL_string(ctx: *const vrt_ctx, arg1: VCL_REAL) -> VCL_STRING;
 }
 unsafe extern "C" {
@@ -5057,7 +5090,6 @@ unsafe extern "C" {
         len: ::std::ffi::c_uint,
     );
 }
-#[doc = " We want the VCC to spit this structs out as const, but when VMODs\n come up with them we want to clone them into malloc'ed space which\n we can free again.\n We collect all the knowledge here by macroizing the fields and make\n a macro for handling them all.\n See also:  cache_backend.h & cache_backend_cfg.c\n One of those things..."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct vrt_endpoint {
@@ -5066,10 +5098,12 @@ pub struct vrt_endpoint {
     pub ipv6: VCL_IP,
     pub uds_path: *const ::std::ffi::c_char,
     pub preamble: *const vrt_blob,
+    pub sslflags: ::std::ffi::c_uint,
+    pub hosthdr: *const ::std::ffi::c_char,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of vrt_endpoint"][::std::mem::size_of::<vrt_endpoint>() - 40usize];
+    ["Size of vrt_endpoint"][::std::mem::size_of::<vrt_endpoint>() - 56usize];
     ["Alignment of vrt_endpoint"][::std::mem::align_of::<vrt_endpoint>() - 8usize];
     ["Offset of field: vrt_endpoint::magic"][::std::mem::offset_of!(vrt_endpoint, magic) - 0usize];
     ["Offset of field: vrt_endpoint::ipv4"][::std::mem::offset_of!(vrt_endpoint, ipv4) - 8usize];
@@ -5078,6 +5112,10 @@ const _: () = {
         [::std::mem::offset_of!(vrt_endpoint, uds_path) - 24usize];
     ["Offset of field: vrt_endpoint::preamble"]
         [::std::mem::offset_of!(vrt_endpoint, preamble) - 32usize];
+    ["Offset of field: vrt_endpoint::sslflags"]
+        [::std::mem::offset_of!(vrt_endpoint, sslflags) - 40usize];
+    ["Offset of field: vrt_endpoint::hosthdr"]
+        [::std::mem::offset_of!(vrt_endpoint, hosthdr) - 48usize];
 };
 impl Default for vrt_endpoint {
     fn default() -> Self {
@@ -5156,10 +5194,11 @@ pub struct vrt_backend_probe {
     pub threshold: ::std::ffi::c_uint,
     pub initial: ::std::ffi::c_uint,
     pub exp_close: ::std::ffi::c_uint,
+    pub vcl_name: *const ::std::ffi::c_char,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of vrt_backend_probe"][::std::mem::size_of::<vrt_backend_probe>() - 64usize];
+    ["Size of vrt_backend_probe"][::std::mem::size_of::<vrt_backend_probe>() - 72usize];
     ["Alignment of vrt_backend_probe"][::std::mem::align_of::<vrt_backend_probe>() - 8usize];
     ["Offset of field: vrt_backend_probe::magic"]
         [::std::mem::offset_of!(vrt_backend_probe, magic) - 0usize];
@@ -5181,6 +5220,8 @@ const _: () = {
         [::std::mem::offset_of!(vrt_backend_probe, initial) - 52usize];
     ["Offset of field: vrt_backend_probe::exp_close"]
         [::std::mem::offset_of!(vrt_backend_probe, exp_close) - 56usize];
+    ["Offset of field: vrt_backend_probe::vcl_name"]
+        [::std::mem::offset_of!(vrt_backend_probe, vcl_name) - 64usize];
 };
 impl Default for vrt_backend_probe {
     fn default() -> Self {
@@ -5686,92 +5727,94 @@ pub enum VslTag {
     SessClose = 5,
     BackendOpen = 6,
     BackendClose = 7,
-    HttpGarbage = 8,
-    Proxy = 9,
-    ProxyGarbage = 10,
-    Length = 11,
-    FetchError = 12,
-    ReqMethod = 13,
-    ReqUrl = 14,
-    ReqProtocol = 15,
-    ReqStatus = 16,
-    ReqReason = 17,
-    ReqHeader = 18,
-    ReqUnset = 19,
-    ReqLost = 20,
-    RespMethod = 21,
-    RespUrl = 22,
-    RespProtocol = 23,
-    RespStatus = 24,
-    RespReason = 25,
-    RespHeader = 26,
-    RespUnset = 27,
-    RespLost = 28,
-    BereqMethod = 29,
-    BereqUrl = 30,
-    BereqProtocol = 31,
-    BereqStatus = 32,
-    BereqReason = 33,
-    BereqHeader = 34,
-    BereqUnset = 35,
-    BereqLost = 36,
-    BerespMethod = 37,
-    BerespUrl = 38,
-    BerespProtocol = 39,
-    BerespStatus = 40,
-    BerespReason = 41,
-    BerespHeader = 42,
-    BerespUnset = 43,
-    BerespLost = 44,
-    ObjMethod = 45,
-    ObjUrl = 46,
-    ObjProtocol = 47,
-    ObjStatus = 48,
-    ObjReason = 49,
-    ObjHeader = 50,
-    ObjUnset = 51,
-    ObjLost = 52,
-    BogoHeader = 53,
-    LostHeader = 54,
-    Ttl = 55,
-    FetchBody = 56,
-    VclAcl = 57,
-    VclCall = 58,
-    VclTrace = 59,
-    VclReturn = 60,
-    ReqStart = 61,
-    Hit = 62,
-    HitPass = 63,
-    ExpBan = 64,
-    ExpKill = 65,
-    WorkThread = 66,
-    EsiXmlerror = 67,
-    Hash = 68,
-    BackendHealth = 69,
-    VclLog = 70,
-    VclError = 71,
-    Gzip = 72,
-    Link = 73,
-    Begin = 74,
-    End = 75,
-    Vsl = 76,
-    Storage = 77,
-    Timestamp = 78,
-    ReqAcct = 79,
-    PipeAcct = 80,
-    BereqAcct = 81,
-    VfpAcct = 82,
-    Witness = 83,
-    H2RxHdr = 84,
-    H2RxBody = 85,
-    H2TxHdr = 86,
-    H2TxBody = 87,
-    HitMiss = 88,
-    Filters = 89,
-    SessError = 90,
-    VclUse = 91,
-    Notice = 92,
-    VdpAcct = 93,
+    BackendSsl = 8,
+    Tls = 9,
+    HttpGarbage = 10,
+    Proxy = 11,
+    ProxyGarbage = 12,
+    Length = 13,
+    FetchError = 14,
+    ReqMethod = 15,
+    ReqUrl = 16,
+    ReqProtocol = 17,
+    ReqStatus = 18,
+    ReqReason = 19,
+    ReqHeader = 20,
+    ReqUnset = 21,
+    ReqLost = 22,
+    RespMethod = 23,
+    RespUrl = 24,
+    RespProtocol = 25,
+    RespStatus = 26,
+    RespReason = 27,
+    RespHeader = 28,
+    RespUnset = 29,
+    RespLost = 30,
+    BereqMethod = 31,
+    BereqUrl = 32,
+    BereqProtocol = 33,
+    BereqStatus = 34,
+    BereqReason = 35,
+    BereqHeader = 36,
+    BereqUnset = 37,
+    BereqLost = 38,
+    BerespMethod = 39,
+    BerespUrl = 40,
+    BerespProtocol = 41,
+    BerespStatus = 42,
+    BerespReason = 43,
+    BerespHeader = 44,
+    BerespUnset = 45,
+    BerespLost = 46,
+    ObjMethod = 47,
+    ObjUrl = 48,
+    ObjProtocol = 49,
+    ObjStatus = 50,
+    ObjReason = 51,
+    ObjHeader = 52,
+    ObjUnset = 53,
+    ObjLost = 54,
+    BogoHeader = 55,
+    LostHeader = 56,
+    Ttl = 57,
+    FetchBody = 58,
+    VclAcl = 59,
+    VclCall = 60,
+    VclTrace = 61,
+    VclReturn = 62,
+    ReqStart = 63,
+    Hit = 64,
+    HitPass = 65,
+    ExpBan = 66,
+    ExpKill = 67,
+    WorkThread = 68,
+    EsiXmlerror = 69,
+    Hash = 70,
+    BackendHealth = 71,
+    VclLog = 72,
+    VclError = 73,
+    Gzip = 74,
+    Link = 75,
+    Begin = 76,
+    End = 77,
+    Vsl = 78,
+    Storage = 79,
+    Timestamp = 80,
+    ReqAcct = 81,
+    PipeAcct = 82,
+    BereqAcct = 83,
+    VfpAcct = 84,
+    Witness = 85,
+    H2RxHdr = 86,
+    H2RxBody = 87,
+    H2TxHdr = 88,
+    H2TxBody = 89,
+    HitMiss = 90,
+    Filters = 91,
+    SessError = 92,
+    VclUse = 93,
+    Notice = 94,
+    VdpAcct = 95,
     Reserved = 254,
     Batch = 255,
 }
@@ -5995,6 +6038,11 @@ pub struct VSC_lck {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct VSC_main_wrk {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct vtls_sess {
     _unused: [u8; 0],
 }
 #[repr(C)]
@@ -7092,6 +7140,9 @@ impl busyobj {
         __bindgen_bitfield_unit
     }
 }
+unsafe extern "C" {
+    pub static mut retry_disabled: *const ::std::ffi::c_char;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct reqtop {
@@ -7801,10 +7852,11 @@ pub struct sess {
     pub timeout_linger: vtim_dur,
     pub send_timeout: vtim_dur,
     pub idle_send_timeout: vtim_dur,
+    pub tls: *mut vtls_sess,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of sess"][::std::mem::size_of::<sess>() - 152usize];
+    ["Size of sess"][::std::mem::size_of::<sess>() - 160usize];
     ["Alignment of sess"][::std::mem::align_of::<sess>() - 8usize];
     ["Offset of field: sess::magic"][::std::mem::offset_of!(sess, magic) - 0usize];
     ["Offset of field: sess::sattr"][::std::mem::offset_of!(sess, sattr) - 4usize];
@@ -7823,6 +7875,7 @@ const _: () = {
     ["Offset of field: sess::send_timeout"][::std::mem::offset_of!(sess, send_timeout) - 136usize];
     ["Offset of field: sess::idle_send_timeout"]
         [::std::mem::offset_of!(sess, idle_send_timeout) - 144usize];
+    ["Offset of field: sess::tls"][::std::mem::offset_of!(sess, tls) - 152usize];
 };
 impl Default for sess {
     fn default() -> Self {
@@ -8444,7 +8497,7 @@ pub struct vscaret {
     pub magic: ::std::ffi::c_uint,
     pub capacity: ::std::ffi::c_uint,
     pub used: ::std::ffi::c_uint,
-    pub lease: __IncompleteArrayField<::std::ffi::c_ulong>,
+    pub lease: __IncompleteArrayField<u64>,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
