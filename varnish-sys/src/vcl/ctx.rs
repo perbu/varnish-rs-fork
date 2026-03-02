@@ -3,6 +3,8 @@
 #[cfg(not(varnishsys_6))]
 use std::ffi::{c_int, c_uint, c_void};
 
+use std::ffi::CStr;
+
 use crate::ffi;
 use crate::ffi::{vrt_ctx, VRT_fail, VRT_CTX_MAGIC};
 use crate::vcl::{HttpHeaders, LogTag, TestWS, VclError, Workspace};
@@ -88,6 +90,17 @@ impl<'a> Ctx<'a> {
             }
         }
     }
+    /// Returns the name of the listen socket this request arrived on,
+    /// as specified in the `-a` flag (e.g., `"http"`, `"https"`).
+    /// Returns `None` in backend context where the session isn't available.
+    #[cfg(not(varnishsys_6))]
+    pub fn local_socket(&self) -> Option<&str> {
+        let raw = unsafe { ffi::VRT_r_local_socket(self.raw) };
+        let cstr = <Option<&CStr>>::from(raw)?;
+        let s = cstr.to_str().ok()?;
+        if s.is_empty() { None } else { Some(s) }
+    }
+
     #[cfg(not(varnishsys_6))]
     pub fn cached_req_body(&mut self) -> Result<Vec<&'a [u8]>, VclError> {
         unsafe extern "C" fn chunk_collector(

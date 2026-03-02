@@ -9695,6 +9695,9 @@ unsafe extern "C" {
 unsafe extern "C" {
     pub fn VFP_Push(arg1: *mut vfp_ctx, arg2: *const vfp) -> *mut vfp_entry;
 }
+unsafe extern "C" {
+    pub fn VRT_r_local_socket(ctx: *const vrt_ctx) -> VCL_STRING;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct http_conn {

@@ -18,6 +18,8 @@
 
 struct vfp_entry *VFP_Push(struct vfp_ctx *, const struct vfp *);
 
+VCL_STRING VRT_r_local_socket(VRT_CTX);
+
 #ifdef VARNISH_RS_HTTP_CONN
 struct http_conn {
         unsigned                magic;
